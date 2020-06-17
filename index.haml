@@ -72,10 +72,10 @@
 									%h3.dancing-script.subtitle= photo[:name]
 									%p.no-margin= photo[:pricing] + "USD"
 
-		-# #gallery
-		-# 	.inner
-		-# 		-gallery_images.each do |image|
-		-# 			.image{style:"background-image:url(imgs/food/#{image});"}
+		#gallery
+			.inner
+				-gallery_images.each do |image|
+					.image{style:"background-image:url(imgs/food/#{image});"}
 
 		-# .container
 		-# 	.card.white.black-text.text-center.relative
