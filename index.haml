@@ -57,20 +57,20 @@
 											%a.medium-menu.white-text.menu-link{href:item[:link]}= item[:title]
 
 
-		-# .auto-height.text-center.relative#menu
-		-# 	.absolute.white#menu-title
-		-# 		%h2.dancing-script.title Menú
-		-# 	-menu_photos = [{name: "Club Sandwich", image: "club-sandwich", pricing: "10.00"}, {name: "Combo Hamburguesa", image: "combo", pricing: "50.00"}, {name: "Hamburguesa", image: "hamburger", pricing: "20.00"}, {name: "Hot Cakes", image: "hot-cakes", pricing: "30.00"}, {name: "Panini", image: "panini", pricing: "15.00"}, {name: "Papas", image: "papas", pricing: "10.00"}, {name: "Club Sandwich", image: "club-sandwich", pricing: "10.00"}, {name: "Hamburguesa", image: "hamburger", pricing: "20.00"}]
+		.auto-height.text-center.relative#menu
+			.absolute.white#menu-title
+				%h2.dancing-script.title Menú
+			-menu_photos = [{name: "Club Sandwich", image: "club-sandwich", pricing: "10.00"}, {name: "Combo Hamburguesa", image: "combo", pricing: "50.00"}, {name: "Hamburguesa", image: "hamburger", pricing: "20.00"}, {name: "Hot Cakes", image: "hot-cakes", pricing: "30.00"}, {name: "Panini", image: "panini", pricing: "15.00"}, {name: "Papas", image: "papas", pricing: "10.00"}, {name: "Club Sandwich", image: "club-sandwich", pricing: "10.00"}, {name: "Hamburguesa", image: "hamburger", pricing: "20.00"}]
 
 		
-		-# 	.row
-		-# 		-menu_photos.each do |photo|
-		-# 			.col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(imgs/food/#{photo[:image]}-thumb.jpg)"}
-		-# 				.screen
-		-# 					.row.middle-xs.full-height
-		-# 						.col-xs-12.white-text
-		-# 							%h3.dancing-script.subtitle= photo[:name]
-		-# 							%p.no-margin= photo[:pricing] + "USD"
+			.row
+				-menu_photos.each do |photo|
+					.col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(imgs/food/#{photo[:image]}-thumb.jpg)"}
+						.screen
+							.row.middle-xs.full-height
+								.col-xs-12.white-text
+									%h3.dancing-script.subtitle= photo[:name]
+									%p.no-margin= photo[:pricing] + "USD"
 
 		-# #gallery
 		-# 	.inner
