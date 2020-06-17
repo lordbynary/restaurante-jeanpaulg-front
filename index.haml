@@ -1,0 +1,131 @@
+-gallery_images = ["club-sandwich.jpg","papas.jpg","hamburger.jpg","panini.jpg","club-sandwich.jpg","papas.jpg"]
+
+!!!5
+%html{class:"no-js", lang:"es"}
+	%head
+		%meta{charset:"utf-8"}
+		%title La mejor comida en Restaurante Facilito
+		%meta{name:"description", content:"Come rico y barato en el mejor restaurante de la ciudad, servicio de primera."}
+		%link{rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"}
+		%link{rel:"stylesheet", href:"css/normalize.css"}
+		%link{rel:"stylesheet", href:"css/bootstrap.css"}
+		%link{rel:"stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"}
+		%link{rel:"stylesheet", href:"css/style.css"}
+		%meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+		%script{src:"js/vendor/modernizr-2.8.3.min.js"}
+	%body
+		="<!--[if lt IE 9] >"
+		%p{class:"browserupgrade"}
+		Estás usando un naevgador
+		%strong desactualizado.
+		Por favor
+		%a{href:"http://browsehappy.com/"}
+			actualiza tu navegador
+		para una mejor experiencia.
+		="<![endif]-->"
+
+		.video-container
+			%video{autoplay:true, loop:true, poster:"videos/images/bbq.jpg", width:"1280", heigth:"720"}
+				%source{src:"videos/mp4/bbq.mp4", type:"video/mp4"}
+				%source{src:"videos/webm/bbq.webm", type:"video/webm"}
+
+		.row.full-height.middle-xs.center-xs.relative.up#home
+			-menu = [{title:"Inicio", link: "#home"}, {title:"Menú", link: "#menu"}, {title:"Galería", link: "#gallery"}, {title:"Contacto", link: "#contact"}, {title:"Cómo llegar", link: "#location"}]
+			%nav.fixed.top.right.navigation.white-text#navigation				
+				%ul.list-inline
+					-menu.each do |item|
+						%li
+							%a.medium-menu{href:item[:link]}= item[:title]
+			.col-xs-12
+				.box.white-text
+					%img{src:"imgs/logo.png", alt:"Logo Restaurante Facilito", width:200, height:145} 
+					%h1.dancing-script.title.no-margin Restaurante Facilito
+					%p#is-open 
+						%i.glyphicon.glyphicon-time
+						%span.text Abierto ahora
+			.absolute.black.large-padding.up--2.full-width#description
+				.row.middle-xs.center-xs
+					.col-xs-7.col-sm-6.moto.white-text.medium
+						Atención cálida y comida preparada por artistas
+					.col-xs.hidden#sticky-navigation
+						.box
+							%nav.small.text-right.navigation#responsive-nav
+								%i.glyphicon.glyphicon-menu-hamburger.white-text.subtitle.glyphicon-remove#menu-opener
+								%ul.list-inline
+									-menu.each do |item|
+										%li
+											%a.medium-menu.white-text.menu-link{href:item[:link]}= item[:title]
+
+
+		-# .auto-height.text-center.relative#menu
+		-# 	.absolute.white#menu-title
+		-# 		%h2.dancing-script.title Menú
+		-# 	-menu_photos = [{name: "Club Sandwich", image: "club-sandwich", pricing: "10.00"}, {name: "Combo Hamburguesa", image: "combo", pricing: "50.00"}, {name: "Hamburguesa", image: "hamburger", pricing: "20.00"}, {name: "Hot Cakes", image: "hot-cakes", pricing: "30.00"}, {name: "Panini", image: "panini", pricing: "15.00"}, {name: "Papas", image: "papas", pricing: "10.00"}, {name: "Club Sandwich", image: "club-sandwich", pricing: "10.00"}, {name: "Hamburguesa", image: "hamburger", pricing: "20.00"}]
+
+		
+		-# 	.row
+		-# 		-menu_photos.each do |photo|
+		-# 			.col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(imgs/food/#{photo[:image]}-thumb.jpg)"}
+		-# 				.screen
+		-# 					.row.middle-xs.full-height
+		-# 						.col-xs-12.white-text
+		-# 							%h3.dancing-script.subtitle= photo[:name]
+		-# 							%p.no-margin= photo[:pricing] + "USD"
+
+		-# #gallery
+		-# 	.inner
+		-# 		-gallery_images.each do |image|
+		-# 			.image{style:"background-image:url(imgs/food/#{image});"}
+
+		-# .container
+		-# 	.card.white.black-text.text-center.relative
+		-# 		%h3.medium.slim
+		-# 			En
+		-# 			%strong.dancing-script.medium RestauranteFacilito
+		-# 			cocinar no es una profesión, no es una técnica, es un
+		-# 			%strong.dancing-script.medium arte
+		-# 		%p.top-space
+		-# 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, rem eos quo! Voluptatibus quam iusto, excepturi odit repellendus quae delectus in! Facilis magnam quae unde a, provident quidem harum culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non unde nobis aut consectetur ipsa facilis deleniti totam neque quasi eius, tempora dolore quod quam sit dolorem iusto. Atque reprehenderit, voluptas?. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum repellendus delectus tenetur, quo enim magnam fugiat. Atque, alias dolorem placeat ex, blanditiis laborum, repudiandae eaque consequatur facilis mollitia vero quasi!
+		-# 			%strong.dancing-script.medium Coco - Chef
+		-# 			.large-padding.medium.black.white-text.text-center
+		-# 				También puedes acceder a este sitio sin conexión a internet
+
+		-# .black.white-text.full-height#contact
+		-# 	.row.middle-xs.full-height
+		-# 		.col-xs-12
+		-# 			.box.text-right
+		-# 				%p.text-center.medium#info-contacto Presiona Enter para llenar el campo correspondiente y enviarnos un correo.
+		-# 				%form{action:"https://formspree.io/lordbynary@gmail.com", method:"POST", id:"contactForm", class:"step-form"}
+		-# 					.row.center-xs
+		-# 						.col-xs-12.col-sm-2.col-md-1.first-sm
+		-# 							.box
+		-# 								-3.times do |i|
+		-# 									.path-step
+		-# 						.col-xs-12.col-sm-3.first-xs
+		-# 							.box
+		-# 								%fieldset.step
+		-# 									%input{type:"email", name:"email", placeholder:"Correo electrónico", class:"input", required:true}
+		-# 								%fieldset.step
+		-# 									%input{type:"text", name:"name", placeholder:"Nombre", class:"input", required:true}
+		-# 								%fieldset.step
+		-# 									%input{type:"textarea", name:"body", placeholder:"Mensaje...", class:"input", required:true}
+		-# 								%div
+		-# 									%button{type:"submit", class:"btn btn-success"}
+		-# 										Enviar
+			
+		-# #location
+		-# 	#map
+		-# 	#message.black.large-padding.white-text.text-center.medium Prueba
+
+		
+		%script{src:"https://code.jquery.com/jquery-3.5.1.min.js", integrity:"sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=", crossorigin:"anonymous"}
+
+		:javascript
+			window.jQuery || document.write("<script src='js/vendor/jquery-1.12.0.min.js'><\/script>")
+
+		%script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyCIK9wLR4rDrlsjsmZR_Tcb0MQ5bfMlnbA"}
+		%script{src:"dist/app.js"} 
+		-# %script{src:"dist/maps.js"} 
+		-# %script{src:"dist/form_object.js"} 
+		-# %script{src:"dist/main.js"}
+		-# %script{src:"dist/steps.js"}
